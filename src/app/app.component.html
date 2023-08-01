@@ -8,12 +8,11 @@
     <button class = "btn btn-primary"(click)="ToggleRight()">Toggle right display pane</button>
   </div>
   <div class = "row">
-    <div class = "col col-xs-5" *ngIf="">
+    <div class = "col col-xs-5" *ngIf="leftEnabled">
       <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
     </div>
-    <div class = "col col-xs-5" [hidden]="rightEnabled">
+    <div class = "col col-xs-5" *ngIf="rightEnabled">
       <app-data-display [numberInput]="updatedNumber"></app-data-display>
     </div>
   </div>
 </div>
-<app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
