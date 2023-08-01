@@ -1,0 +1,19 @@
+<app-fruits>
+
+
+</app-fruits>
+<div class = "container">
+  <div class = "row">
+    <button class = "btn btn-success" (click)="ToggleLeft()">Toggle left display pane</button>
+    <button class = "btn btn-primary"(click)="ToggleRight()">Toggle right display pane</button>
+  </div>
+  <div class = "row">
+    <div class = "col col-xs-5" *ngIf="">
+      <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
+    </div>
+    <div class = "col col-xs-5" [hidden]="rightEnabled">
+      <app-data-display [numberInput]="updatedNumber"></app-data-display>
+    </div>
+  </div>
+</div>
+<app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
